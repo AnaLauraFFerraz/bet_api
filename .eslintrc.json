@@ -15,12 +15,11 @@
     },
     "plugins": ["@typescript-eslint", "prettier"],
     "rules": {
-        "import/no-unresolved": "error",
-        "import/order": "warn",
+        "prettier/prettier": "error",
+        "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "no-unused-vars": "off",
         "import/no-named-as-default-member": "off",
-        "@typescript-eslint/no-namespace": "off",
-        "import/newline-after-import": ["error"],
-        "lines-between-class-members": ["error", "always"]
+        "@typescript-eslint/no-namespace": "off"
     },
     "settings": {
         "import/parsers": {
