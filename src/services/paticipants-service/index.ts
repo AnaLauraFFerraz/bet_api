@@ -1,5 +1,5 @@
-import participantsRepository from '../repositories/participants-repository';
-import { ParticipantOutput } from '../protocols';
+import participantsRepository from '../../repositories/participants-repository';
+import { ParticipantOutput } from '../../protocols';
 import { Participant } from '@prisma/client';
 import httpStatus from 'http-status';
 
