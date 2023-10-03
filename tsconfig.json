@@ -1,12 +1,44 @@
+// {
+//   "compilerOptions": {
+//     "outDir": "dist",
+//     "esModuleInterop": true,
+//     "module": "CommonJS",
+//     "target": "ES2020",
+//     "moduleResolution": "Node",
+//     "typeRoots": ["./node_modules/@types"],
+//     "baseUrl": "src",
+//     // "paths": {
+//     //   "@/*": [
+//     //     "*"
+//     //   ]
+//     // },
+//     "plugins": [
+//       {
+//         "transform": "typescript-transform-paths"
+//       }
+//     ]
+//   },
+//   "ts-node": {
+//     "esm": true
+//   },
+//   "include": ["src/**/*.ts"],
+//   "exclude": ["node_modules"]
+// }
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "esModuleInterop": true,
     "module": "CommonJS",
-    "moduleResolution": "Node",
-    "baseUrl": "src",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   },
-  "ts-node": {
-    "esm": true
-  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }
