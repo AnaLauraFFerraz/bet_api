@@ -1,8 +1,10 @@
 import participantsService from '../../src/services/paticipants-service';
 import { generateParticipant } from '../factories/participants-factory';
 import { cleanDb } from '../helpers';
+import { init } from 'app';
 
-beforeEach(async () => {
+beforeAll(async () => {
+  await init();
   await cleanDb();
 });
 

@@ -5,8 +5,10 @@ import { generateBet } from '../factories/bet-factory';
 import gameService from '../../src/services/games-service';
 import participantsService from '../../src/services/paticipants-service';
 import { cleanDb } from '../helpers';
+import { init } from 'app';
 
-beforeEach(async () => {
+beforeAll(async () => {
+  await init();
   await cleanDb();
 });
 

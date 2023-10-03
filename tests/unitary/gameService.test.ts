@@ -1,8 +1,10 @@
 import gameService from '../../src/services/games-service';
 import { generateGame } from '../factories/game-factory';
 import { cleanDb } from '../helpers';
+import { init } from 'app';
 
-beforeEach(async () => {
+beforeAll(async () => {
+  await init();
   await cleanDb();
 });
 
