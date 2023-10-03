@@ -16,7 +16,6 @@ export async function createParticipant(req: Request, res: Response) {
       name,
       balance,
     );
-    console.log(participant);
     return res.status(httpStatus.CREATED).send(participant);
   } catch (error) {
     return res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);

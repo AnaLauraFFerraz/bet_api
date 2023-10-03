@@ -19,3 +19,8 @@ export type CreateParticipantInput = {
 };
 
 export type ParticipantOutput = Participant[];
+
+export type CreateGameInput = {
+  homeTeamName: string;
+  awayTeamName: string;
+};
