@@ -1,29 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "outDir": "dist",
-//     "esModuleInterop": true,
-//     "module": "CommonJS",
-//     "target": "ES2020",
-//     "moduleResolution": "Node",
-//     "typeRoots": ["./node_modules/@types"],
-//     "baseUrl": "src",
-//     // "paths": {
-//     //   "@/*": [
-//     //     "*"
-//     //   ]
-//     // },
-//     "plugins": [
-//       {
-//         "transform": "typescript-transform-paths"
-//       }
-//     ]
-//   },
-//   "ts-node": {
-//     "esm": true
-//   },
-//   "include": ["src/**/*.ts"],
-//   "exclude": ["node_modules"]
-// }
 {
   "compilerOptions": {
     "module": "CommonJS",
