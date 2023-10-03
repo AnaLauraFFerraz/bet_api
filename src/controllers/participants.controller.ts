@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-import participantsService from '../services';
+import participantsService from '../services/paticipants-service';
 
 export async function createParticipant(req: Request, res: Response) {
   try {
