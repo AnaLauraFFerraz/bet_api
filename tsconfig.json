@@ -1,18 +1,21 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "target": "ES2020",
-    "moduleResolution": "node",
+    "outDir": "dist",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "types": ["jest", "node"],
-    "typeRoots": ["./node_modules/@types"],
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDirs": ["src", "tests"],
+    "baseUrl": "src",
+    "paths": {
+      "@/": [""]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "plugins":[{
+    "transform": "typescript-transform-paths"
+  }],
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src", "tests"]
 }

@@ -1,9 +1,10 @@
 import request from 'supertest';
-import app from '../../src/app';
+import app, { init } from '../../src/app';
 import { cleanDb } from '../helpers';
 import { generateGame } from '../factories/game-factory';
 
-beforeEach(async () => {
+beforeAll(async () => {
+  await init();
   await cleanDb();
 });
 
