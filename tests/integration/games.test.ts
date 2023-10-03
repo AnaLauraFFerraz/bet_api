@@ -23,16 +23,16 @@ describe('Games Routes', () => {
   });
 
   it('should fetch all games', async () => {
-    const gameData1 = generateGame();
-    const gameData2 = generateGame();
+    const responseBefore = await request(app).get('/games');
+    const initialGamesCount = responseBefore.body.length;
 
-    await request(app).post('/games').send(gameData1);
-    await request(app).post('/games').send(gameData2);
+    await request(app).post('/games').send(generateGame());
+    await request(app).post('/games').send(generateGame());
 
-    const response = await request(app).get('/games');
+    const responseAfter = await request(app).get('/games');
 
-    expect(response.status).toBe(200);
-    expect(response.body.length).toBe(2);
+    expect(responseAfter.status).toBe(200);
+    expect(responseAfter.body.length).toBe(initialGamesCount + 2);
   });
 
   it('should fetch a specific game by ID', async () => {

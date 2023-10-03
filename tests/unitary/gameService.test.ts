@@ -22,15 +22,16 @@ describe('Games Service', () => {
   });
 
   it('should fetch all games', async () => {
+    const initialGames = await gameService.getAllGames();
     const gameData1 = generateGame();
     const gameData2 = generateGame();
 
     await gameService.createGame(gameData1);
     await gameService.createGame(gameData2);
 
-    const games = await gameService.getAllGames();
+    const allGames = await gameService.getAllGames();
 
-    expect(games.length).toBe(2);
+    expect(allGames.length).toBe(initialGames.length + 2);
   });
 
   it('should fetch a specific game by ID', async () => {
