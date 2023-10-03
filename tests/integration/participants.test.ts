@@ -35,15 +35,15 @@ describe('Participants Routes', () => {
   });
 
   it('should fetch all participants', async () => {
-    const participantData1 = generateParticipant();
-    const participantData2 = generateParticipant();
+    const responseBefore = await request(app).get('/participants');
+    const initialParticipantsCount = responseBefore.body.length;
 
-    await request(app).post('/participants').send(participantData1);
-    await request(app).post('/participants').send(participantData2);
+    await request(app).post('/participants').send(generateParticipant());
+    await request(app).post('/participants').send(generateParticipant());
 
-    const response = await request(app).get('/participants');
+    const responseAfter = await request(app).get('/participants');
 
-    expect(response.status).toBe(200);
-    expect(response.body.length).toBe(2);
+    expect(responseAfter.status).toBe(200);
+    expect(responseAfter.body.length).toBe(initialParticipantsCount + 2);
   });
 });

@@ -30,6 +30,7 @@ describe('Participants Service', () => {
   });
 
   it('should fetch all participants', async () => {
+    const initialParticipants = await participantsService.getAllParticipants();
     const participant1 = await participantsService.createParticipant(
       generateParticipant().name,
       generateParticipant().balance,
@@ -39,10 +40,10 @@ describe('Participants Service', () => {
       generateParticipant().balance,
     );
 
-    const participants = await participantsService.getAllParticipants();
+    const allParticipants = await participantsService.getAllParticipants();
 
-    expect(participants.length).toBe(2);
-    expect(participants).toEqual(
+    expect(allParticipants.length).toBe(initialParticipants.length + 2);
+    expect(allParticipants).toEqual(
       expect.arrayContaining([participant1, participant2]),
     );
   });

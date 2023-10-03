@@ -7,6 +7,9 @@ async function createParticipant(
   name: string,
   balance: number,
 ): Promise<Participant> {
+  if (balance < 1000) {
+    throw new Error('Initial balance must be at least R$ 10,00');
+  }
   const participant = await participantsRepository.createParticipant({
     name,
     balance,
